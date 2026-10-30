@@ -2,8 +2,6 @@
 
 **An AI assistant that reads tenant requests, works out how urgent they are and who is responsible, and drafts a reply for a person to approve.**
 
-Option 2: Comprehensive AI Project Proposal
-
 ---
 
 ## 1. Overview
