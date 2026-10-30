@@ -58,7 +58,7 @@ In short, the AI does the reading, sorting, looking up, and drafting, and people
 | User | What they get out of it |
 |---|---|
 | **Property manager or owner (main user)** | A prioritized queue where each request already has a summary, urgency, lease-based answer, suggested vendor, and a draft reply. Reviewing takes a minute instead of a research task. |
-| **On-call or after-hours contact** | An immediate alert for emergencies with the key facts and suggested first steps. |
+| **After-hours contact** | An immediate alert for emergencies with the key facts and suggested first steps. |
 | **Tenants (indirect)** | Faster, clearer, more consistent responses, and a request that gets routed correctly the first time. |
 | **Vendors (indirect)** | Complete work requests that already state the location, the issue, and how urgent it is. |
 
@@ -358,33 +358,6 @@ If I can't see what the system is doing, I can't trust it. Every request creates
 | **Not much data** | Few past examples of rare issues | Carefully reviewed extra examples, and growing the dataset from every correction |
 
 **Honest limitations.** This assistant doesn't replace judgment about tenant relationships, negotiation, or legal questions. It only works as well as the documents it can read. It can't inspect a site or verify what a tenant says. And its performance has to be re-checked as leases, tenants, and models change.
-
----
-
-## 13. How This Uses What I Learned in the Course
-
-| Course topic | Where it shows up in this project |
-|---|---|
-| **Week 1: Prompting and LLM APIs** | Clear, role-based prompts with explicit rules, and tone detection to shape empathetic replies |
-| **Week 2: Structured outputs** | Pydantic schemas (`TenantRequest`, `ActionPlan`) make every step's output validated and machine-readable, and make failures easy to trace |
-| **Week 3: Embeddings and RAG** | Lease and property documents are chunked, embedded, and searched with metadata filters, keyword search, and re-ranking, so answers cite the real clause |
-| **Week 4: Evaluation and observability** | A labeled dataset, tracked experiments, release gates, and end-to-end traces, tags, dashboards, and alerts |
-| **Week 5: Chaining and human-in-the-loop** | A five-step chain instead of one large prompt, with human checkpoints placed by risk and corrections fed back into the dataset |
-| **Week 6: AI-assisted development tools** | Shared Cursor rules for consistent code, and small pull requests with AI-assisted code review |
-| **Week 7: Putting it together** | This proposal: the problem, solution, users, features, approach, prompts and outputs, evaluation, observability, and risks |
-
----
-
-## 14. Next Steps
-
-If I were to build this, the first moves would be:
-
-1. Decide the pilot scope and who owns it.
-2. Collect and protect a sample of past requests and the relevant lease and property documents.
-3. Define the emergency categories, the cost approval limit, and the approved vendor list.
-4. Label the evaluation set and agree on the release gates.
-5. Build the first three steps and run them in shadow mode.
-6. Compare the results to the success criteria and decide whether to move to assisted mode.
 
 ---
 
